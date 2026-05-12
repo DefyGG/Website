@@ -61,9 +61,9 @@ export default function Software() {
 
       <div style={{ borderTop: '1px solid #ddd', marginBottom: '3rem' }} />
 
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(340px, 1fr))', gap: '2rem' }}>
+      <div className="software-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(340px, 1fr))', gap: '2rem' }}>
         {software.map(sw => (
-          <div key={sw.name} className="software-card" style={{ padding: '2rem 2.2rem', background: '#fff' }}>
+          <div key={sw.name} className="software-card software-card-item" style={{ padding: '2rem 2.2rem', background: '#fff' }}>
 
             {/* Name + Status */}
             <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', marginBottom: '0.8rem' }}>

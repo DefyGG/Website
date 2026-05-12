@@ -82,6 +82,7 @@ export default function News() {
           return (
             <div
               key={i}
+              className="news-item-grid"
               style={{
                 display: 'grid',
                 gridTemplateColumns: '120px 1fr',

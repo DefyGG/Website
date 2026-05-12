@@ -8,21 +8,21 @@ export default function About() {
         display: 'grid',
         gridTemplateColumns: 'minmax(0, 1.1fr) minmax(260px, 0.9fr)',
         gap: '2.5rem',
-        alignItems: 'stretch',
+        alignItems: 'center',
         marginBottom: '3.5rem',
       }}>
         <div className="about-glass" style={{ display: 'flex', flexDirection: 'column', padding: '1.5rem 1.5rem 1.7rem' }}>
           <div style={{ marginBottom: '1.5rem' }}>
             <h1 className="about-name" style={{
               fontFamily: '"Computer Modern Serif", serif',
-              fontSize: '2.6rem',
+              fontSize: '2.8rem',
               fontWeight: 'normal',
               letterSpacing: '0.01em',
               lineHeight: 1.15,
               margin: 0,
               marginBottom: '0.5rem',
               color: '#111',
-            }}>
+            }} className="about-intro-title">
               Michael I. Miller
             </h1>
 
@@ -32,7 +32,7 @@ export default function About() {
               color: '#555',
               letterSpacing: '0.03em',
               marginBottom: '0.25rem',
-              paddingTop: '3rem',
+              paddingTop: '2rem',
             }}>
               Bessie Darling Massey Professor
             </p>
@@ -65,7 +65,7 @@ export default function About() {
           </div>
         </div>
 
-        <div className="about-headshot-wrap" style={{ justifySelf: 'end', width: '100%', maxWidth: 360, minHeight: '100%', display: 'flex' }}>
+        <div className="about-headshot-wrap" style={{ justifySelf: 'end', width: '100%', maxWidth: 390, minHeight: '100%', display: 'flex' }}>
           <div style={{ width: '100%', display: 'flex', alignItems: 'stretch' }}>
             <>
               <img

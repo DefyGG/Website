@@ -70,7 +70,7 @@ export default function App() {
         maxWidth: 1120,
         margin: '0 auto',
         padding: '0 3rem',
-      }}>
+      }} className="page-shell">
 
         {/* Header */}
         <header style={{

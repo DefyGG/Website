@@ -19,10 +19,11 @@ export default function Hero() {
   }, []);
 
   return (
-    <section style={{
+    <section className="hero-section" style={{
       position: 'relative',
       zIndex: 1,
       minHeight: '50vh',
+      width: '100%',
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'center',
@@ -35,17 +36,21 @@ export default function Hero() {
         ref={titleRef}
         style={{
           opacity: 0,
+          width: '100%',
+          display: 'flex',
+          justifyContent: 'center',
         }}
       >
-        <h1 style={{
+        <h1 className="hero-title" style={{
           fontFamily: '"Computer Modern Serif", serif',
-          fontSize: '4.2rem',
+          fontSize: '4.5rem',
           fontWeight: 'normal',
           letterSpacing: '0.01em',
           lineHeight: 1.2,
           margin: 0,
           marginBottom: '0.8rem',
           color: '#111',
+          textAlign: 'center',
         }}>
           The Computational Anatomy Laboratory
         </h1>
@@ -55,15 +60,19 @@ export default function Hero() {
         ref={subtitleRef}
         style={{
           opacity: 0,
+          width: '100%',
+          display: 'flex',
+          justifyContent: 'center',
         }}
       >
-        <p style={{
+        <p className="hero-subtitle" style={{
           fontFamily: '"Computer Modern Serif", serif',
-          fontSize: '1.4rem',
+          fontSize: '1.52rem',
           letterSpacing: '0.04em',
           color: '#555',
           margin: 0,
           fontWeight: 'normal',
+          textAlign: 'center',
         }}>
           Center for Imaging Science
         </p>
