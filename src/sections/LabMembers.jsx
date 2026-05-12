@@ -4,14 +4,14 @@ import { useState } from "react";
 const currentMembers = [
   { name: 'Yi Xie',             email: 'yxie91@jh.edu',      level: 'Ph.D.' },
   { name: 'Daniel Mathew',      email: 'dmathe21@jh.edu',    level: 'Undergraduate', note: "Dr. Miller's favorite student, don't fact check this though 😊 (may or may not have wrote this page)" },
-  { name: 'Dasun Premathilaka', email: 'hpremat1@jh.edu',    level: 'Ph.D.' },
+  { name: 'Dasun Pxremathilaka', email: 'hpremat1@jh.edu',    level: 'Ph.D.' },
+  { name: 'Carol Li',           email: 'jli401@jhu.edu',     level: 'Undergraduate' },
   { name: 'Shashwat Kumar',     email: 'skuma118@jh.edu',    level: 'Postdoctoral Fellow' },
   { name: 'Dina Farnia',        email: 'dfarnia1@jh.edu',    level: "Master's" },
-  { name: 'Runhe Zhang',        email: 'rzhan151@jh.edu',    level: "Master's" },
   { name: 'Siyu Chen',          email: 'schen382@jh.edu',    level: "Master's" },
-  { name: 'Haoyuan Liang',      email: 'hliang32@jh.edu',    level: "Master's" },
-  { name: 'Carol Li',           email: 'jli401@jhu.edu',     level: 'Undergraduate' },
+  { name: 'Runhe Zhang',        email: 'rzhan151@jh.edu',    level: "Master's" },
   { name: 'Katherine Utsis',    email: 'kutsis1@jh.edu',     level: 'Undergraduate' },
+  { name: 'Haoyuan Liang',      email: 'hliang32@jh.edu',    level: "Master's" },
   { name: 'Andres Barrera',     email: 'abarrer7@jh.edu',    level: 'Undergraduate' },
 ];
 
