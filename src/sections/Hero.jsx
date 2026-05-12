@@ -52,7 +52,7 @@ export default function Hero() {
           color: '#111',
           textAlign: 'center',
         }}>
-          The Computational Anatomy Laboratory
+          The Molecular Computational Anatomy Lab
         </h1>
       </div>
 

@@ -100,7 +100,7 @@ export default function App() {
               color: '#111',
               fontWeight: 'normal',
             }}>
-              Computational Anatomy Laboratory
+              CIS MolecularCA Lab
             </span>
             <span style={{
               fontFamily: '"Computer Modern Serif", serif',
