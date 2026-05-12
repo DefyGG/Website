@@ -36,6 +36,25 @@ const publications = [
         journal: 'Communications Engineering',
         details: '44(1):2731-339',
       },
+      {
+        authors: 'Miller M, Tward D, Trouvé A',
+        title: 'Molecular Computational Anatomy: Unifying the Particle to Tissue Continuum via Measure Representations of the Brain',
+        journal: 'BME Frontiers',
+        details: '2022:9868673',
+        link: 'https://spj.science.org/doi/full/10.34133/2022/9868673',
+      },
+    ],
+  },
+  {
+    year: '2021',
+    entries: [
+      {
+        authors: 'Miller M, Tward D, Trouvé A',
+        title: 'Hierarchical Computational Anatomy: Unifying the Molecular to Tissue Continuum via Measure Representations of the Brain',
+        journal: 'bioRxiv',
+        details: '2021.04.19.440540',
+        link: 'https://www.biorxiv.org/content/10.1101/2021.04.19.440540v7',
+      },
     ],
   },
   {
@@ -90,6 +109,18 @@ const publications = [
     ],
   },
   {
+    year: '2015',
+    entries: [
+      {
+        authors: 'Miller MI, Trouvé A, Younes L',
+        title: 'Hamiltonian Systems and Optimal Control in Computational Anatomy: 100 Years since D\'Arcy Thompson',
+        journal: 'Annual Review of Biomedical Engineering',
+        details: '17:447-509',
+        link: 'https://pmc.ncbi.nlm.nih.gov/articles/PMC10530648/',
+      },
+    ],
+  },
+  {
     year: '2014',
     entries: [
       {
@@ -97,6 +128,13 @@ const publications = [
         title: 'Inferring changepoint times of medial temporal lobe morphometric change in preclinical Alzheimer\'s disease',
         journal: 'NeuroImage Clin',
         details: '5:178-187',
+      },
+      {
+        authors: 'Miller MI, Trouvé A, Younes L',
+        title: 'Diffeomorphometry and Geodesic Positioning Systems for Human Anatomy',
+        journal: 'Technology',
+        details: '2(1):36',
+        link: 'https://pmc.ncbi.nlm.nih.gov/articles/PMC10896418/',
       },
     ],
   },
@@ -108,6 +146,13 @@ const publications = [
         title: 'Pattern separation in the human hippocampal CA3 and dentate gyrus',
         journal: 'Science',
         details: '319(5870):1640-1642, 2008',
+      },
+      {
+        authors: 'Miller MI, Trouvé A, Younes L',
+        title: 'Geodesic Shooting for Computational Anatomy',
+        journal: 'Journal of Mathematical Imaging and Vision',
+        details: '24(2):209-228, 2006',
+        link: 'https://link.springer.com/article/10.1007/s10851-005-3624-0',
       },
       {
         authors: 'Beg MF, Miller MI, Trouve A, Younes L',
@@ -122,10 +167,24 @@ const publications = [
         details: '25(3):783-792, 2005',
       },
       {
+        authors: 'Miller MI, Trouvé A, Younes L',
+        title: 'On the Metrics and Euler-Lagrange Equations of Computational Anatomy',
+        journal: 'Annual Review of Biomedical Engineering',
+        details: '4:375-405, 2002',
+        link: 'https://ieeexplore.ieee.org/document/748499',
+      },
+      {
         authors: 'Grenander U, Miller MI',
         title: 'Computational anatomy: an emerging discipline',
         journal: 'Quarterly of Applied Mathematics',
         details: '56:617-694, 1998',
+      },
+      {
+        authors: 'Grenander U, Miller MI',
+        title: 'Representations of Knowledge in Complex Systems',
+        journal: 'Journal of the Royal Statistical Society Series B',
+        details: '56(4):549-581, 1994',
+        link: 'https://academic.oup.com/jrsssb/article/56/4/549/7028323',
       },
       {
         authors: 'Christensen GE, Rabbitt RD, Miller MI',
@@ -150,6 +209,13 @@ const publications = [
         title: 'Speech encoding in the auditory nerve: implications for cochlear implants',
         journal: 'Ann N Y Acad Sci',
         details: '405(1):94-113, 1983',
+      },
+      {
+        authors: 'Grenander U, Miller MI',
+        title: 'Pattern Theory: From Representation to Inference',
+        journal: 'Oxford University Press',
+        details: 'Oxford, 2007. ISBN: 9780199297061',
+        link: 'https://www.abebooks.com/9780199297061/Pattern-Theory-Representation-Inference-Oxford-0199297061/plp',
       },
     ],
   },
@@ -211,7 +277,11 @@ export default function Publications() {
                   lineHeight: 1.5,
                   margin: 0,
                 }}>
-                  {pub.title}
+                  {pub.link ? (
+                    <a href={pub.link} target="_blank" rel="noopener noreferrer" style={{ color: '#111', textDecoration: 'underline', textDecorationColor: '#35E1EA' }}>
+                      {pub.title}
+                    </a>
+                  ) : pub.title}
                 </p>
                 <p style={{
                   fontFamily: '"Computer Modern Serif", serif',

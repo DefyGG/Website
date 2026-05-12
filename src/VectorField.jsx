@@ -144,7 +144,7 @@ export default function VectorField() {
         a.rx = (a.rx || a.bx) + ((a.px || a.bx) - (a.rx || a.bx)) * DAMPING;
         a.ry = (a.ry || a.by) + ((a.py || a.by) - (a.ry || a.by)) * DAMPING;
 
-        const alpha = (0.4 + (dist < INFLUENCE_RADIUS ? (1 - dist / INFLUENCE_RADIUS) * 0.1 : 0)) * edgeGradient;
+        const alpha = (0.25 + (dist < INFLUENCE_RADIUS ? (1 - dist / INFLUENCE_RADIUS) * 0.1 : 0)) * edgeGradient;
         drawArrow(ctx, a.rx, a.ry, a.angle, alpha);
       }
 

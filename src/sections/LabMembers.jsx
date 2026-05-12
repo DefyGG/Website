@@ -3,7 +3,7 @@ import { useState } from "react";
 // ── Current Members ────────────────────────────────────────────────────────────
 const currentMembers = [
   { name: 'Yi Xie',             email: 'yxie91@jh.edu',      level: 'Ph.D.' },
-  { name: 'Daniel Mathew',      email: 'dmathe21@jh.edu',    level: 'Undergraduate', note: "Dr. Miller's favorite student, don't fact check this though :)" },
+  { name: 'Daniel Mathew',      email: 'dmathe21@jh.edu',    level: 'Undergraduate', note: "Dr. Miller's favorite student, don't fact check this though 😊 (may or may not have wrote this page)" },
   { name: 'Dasun Premathilaka', email: 'hpremat1@jh.edu',    level: 'Ph.D.' },
   { name: 'Shashwat Kumar',     email: 'skuma118@jh.edu',    level: 'Postdoctoral Fellow' },
   { name: 'Dina Farnia',        email: 'dfarnia1@jh.edu',    level: "Master's" },

@@ -2,9 +2,9 @@ export default function About() {
   const headshotPath = '/Michael-Miller.png';
 
   return (
-    <section className="section-enter" style={{ maxWidth: 920, margin: '0 auto', paddingTop: '4rem', paddingBottom: '6rem' }}>
+    <section className="section-enter" style={{ maxWidth: 920, margin: '0 auto', paddingTop: '2rem', paddingBottom: '6rem' }}>
       {/* Intro row */}
-      <div style={{
+      <div className="about-intro-row" style={{
         display: 'grid',
         gridTemplateColumns: 'minmax(0, 1.1fr) minmax(260px, 0.9fr)',
         gap: '2.5rem',
@@ -25,7 +25,7 @@ export default function About() {
             }}>
               Michael I. Miller
             </h1>
-            
+
             <p style={{
               fontFamily: '"Computer Modern Serif", serif',
               fontSize: '1.05rem',
@@ -63,10 +63,9 @@ export default function About() {
               Department of Biomedical Engineering, Johns Hopkins University
             </p>
           </div>
-
         </div>
 
-        <div style={{ justifySelf: 'end', width: '100%', maxWidth: 360, minHeight: '100%', display: 'flex' }}>
+        <div className="about-headshot-wrap" style={{ justifySelf: 'end', width: '100%', maxWidth: 360, minHeight: '100%', display: 'flex' }}>
           <div style={{ width: '100%', display: 'flex', alignItems: 'stretch' }}>
             <>
               <img
@@ -178,42 +177,147 @@ export default function About() {
       {/* Thin rule */}
       <div style={{ borderTop: '1px solid #ddd', marginBottom: '3.5rem' }} />
 
-      {/* Research description */}
-      <div className="content-panel" style={{ marginBottom: '4rem' }}>
-        <p style={{
-          fontFamily: '"Computer Modern Serif", serif',
-          fontSize: '1.05rem',
-          lineHeight: 1.85,
-          color: '#222',
-          marginBottom: '1.5rem',
-        }}>
-          Our laboratory develops mathematical and computational frameworks for the analysis of biological shape across scales.
-          Central to this program is the theory of diffeomorphic image registration, the study of smooth, invertible mappings
-          that carry one anatomical configuration into another, applied to the human brain as observed through multi-scale
-          imaging modalities.
-        </p>
-        <p style={{
-          fontFamily: '"Computer Modern Serif", serif',
-          fontSize: '1.05rem',
-          lineHeight: 1.85,
-          color: '#222',
-          marginBottom: '1.5rem',
-        }}>
-          Current research integrates high-field structural MRI, spatial transcriptomics, lipidomics, and fluorescence protein
-          staining to construct a coordinated atlas of neurodegeneration. By aligning molecular measurements to geometric
-          deformation fields, we seek to understand how protein aggregation, lipid remodeling, and transcriptional dysregulation
-          manifest as measurable changes in brain morphology.
-        </p>
-        <p style={{
-          fontFamily: '"Computer Modern Serif", serif',
-          fontSize: '1.05rem',
-          lineHeight: 1.85,
-          color: '#222',
-        }}>
-          This work lies at the intersection of differential geometry, statistical inference, and systems neuroscience.
-          Applications include the early detection and staging of Alzheimer's disease, traumatic brain injury, and
-          normal aging through population-level shape analysis.
-        </p>
+      {/* Lab information with images */}
+      <div className="about-lab-grid" style={{ marginBottom: '3.5rem' }}>
+        <div className="about-lab-cell about-lab-image-cell">
+          <img
+            src="/Allen-Institute-Mouse-Brain.png"
+            alt="Allen Institute Mouse Brain"
+            className="about-lab-image"
+            onError={e => {
+              e.currentTarget.style.display = 'none';
+              const fallback = e.currentTarget.parentElement?.querySelector('[data-lab-image-fallback]');
+              if (fallback) fallback.style.display = 'flex';
+            }}
+          />
+          <div
+            data-lab-image-fallback
+            style={{
+              textAlign: 'center',
+              padding: '2rem 1.5rem',
+              display: 'none',
+              width: '100%',
+              minHeight: '200px',
+              alignItems: 'center',
+              justifyContent: 'center',
+              background: '#f5f5f5',
+            }}
+          >
+            <div>
+              <p style={{
+                fontFamily: '"Computer Modern Serif", serif',
+                fontSize: '0.78rem',
+                letterSpacing: '0.14em',
+                textTransform: 'uppercase',
+                color: '#888',
+                margin: 0,
+                marginBottom: '0.9rem',
+              }}>
+                Image Upload
+              </p>
+              <p style={{
+                fontFamily: '"Computer Modern Serif", serif',
+                fontSize: '0.95rem',
+                lineHeight: 1.7,
+                color: '#555',
+                margin: 0,
+              }}>
+                Place Allen-Institute-Mouse-Brain.png in the public folder.
+              </p>
+            </div>
+          </div>
+          <p className="about-lab-caption">Allen Mouse Atlas</p>
+        </div>
+
+        <div className="about-lab-cell about-lab-text-cell">
+          <p style={{
+            fontFamily: '"Computer Modern Serif", serif',
+            fontSize: '1.05rem',
+            lineHeight: 1.85,
+            color: '#222',
+            margin: 0,
+            maxWidth: '34rem',
+          }}>
+            Our laboratory develops mathematical and computational frameworks for the analysis of biological shape across scales.
+            Central to this program is the theory of diffeomorphic image registration, the study of smooth, invertible mappings
+            that carry one anatomical configuration into another, applied to the human brain as observed through multi-scale
+            imaging modalities.
+          </p>
+        </div>
+
+        <div className="about-lab-cell about-lab-text-cell">
+          <p style={{
+            fontFamily: '"Computer Modern Serif", serif',
+            fontSize: '1.05rem',
+            lineHeight: 1.85,
+            color: '#222',
+            margin: 0,
+            maxWidth: '34rem',
+          }}>
+            Current research integrates high-field structural MRI, spatial transcriptomics, lipidomics, and fluorescence protein
+            staining to construct a coordinated atlas of neurodegeneration and shape change in the brain.
+          </p>
+          <p style={{
+            fontFamily: '"Computer Modern Serif", serif',
+            fontSize: '1.05rem',
+            lineHeight: 1.85,
+            color: '#222',
+            margin: 0,
+            maxWidth: '34rem',
+          }}>
+            This work lies at the intersection of differential geometry, statistical inference, and systems neuroscience, with applications in the early detection and staging of Alzheimer's disease, traumatic brain injury, and normal aging.
+          </p>
+        </div>
+
+        <div className="about-lab-cell about-lab-pointcloud-cell">
+          <img
+            src="/Point-Clouds.png"
+            alt="Point Clouds"
+            className="about-lab-image"
+            onError={e => {
+              e.currentTarget.style.display = 'none';
+              const fallback = e.currentTarget.parentElement?.querySelector('[data-points-fallback]');
+              if (fallback) fallback.style.display = 'flex';
+            }}
+          />
+          <div
+            data-points-fallback
+            style={{
+              textAlign: 'center',
+              padding: '2rem 1.5rem',
+              display: 'none',
+              width: '100%',
+              minHeight: '200px',
+              alignItems: 'center',
+              justifyContent: 'center',
+              background: '#f5f5f5',
+            }}
+          >
+            <div>
+              <p style={{
+                fontFamily: '"Computer Modern Serif", serif',
+                fontSize: '0.78rem',
+                letterSpacing: '0.14em',
+                textTransform: 'uppercase',
+                color: '#888',
+                margin: 0,
+                marginBottom: '0.9rem',
+              }}>
+                Image Upload
+              </p>
+              <p style={{
+                fontFamily: '"Computer Modern Serif", serif',
+                fontSize: '0.95rem',
+                lineHeight: 1.7,
+                color: '#555',
+                margin: 0,
+              }}>
+                Place Point-Clouds.png in the public folder.
+              </p>
+            </div>
+          </div>
+          <p className="about-lab-caption" style={{ marginTop: '0.7rem' }}>Point-cloud representation of layer II ERC</p>
+        </div>
       </div>
 
       {/* Research areas */}

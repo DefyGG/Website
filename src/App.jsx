@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import VectorField from './VectorField';
+import Hero from './sections/Hero';
 import About from './sections/About';
 import LabMembers from './sections/LabMembers';
 import Publications from './sections/Publications';
@@ -30,11 +31,13 @@ function NavTab({ label, active, onClick }) {
 export default function App() {
   const [activeTab, setActiveTab] = useState('about');
   const [renderKey, setRenderKey] = useState(0);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   function handleTabClick(id) {
     if (id !== activeTab) {
       setActiveTab(id);
       setRenderKey(k => k + 1);
+      setMobileMenuOpen(false);
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   }
@@ -82,15 +85,11 @@ export default function App() {
           marginBottom: '1.5rem',
           paddingLeft: '1.4rem',
           paddingRight: '1.4rem',
-          background: 'rgba(255, 255, 255, 0.7)',
-          backdropFilter: 'blur(14px)',
-          WebkitBackdropFilter: 'blur(14px)',
-          border: '1px solid rgba(255, 255, 255, 0.62)',
-          borderRadius: '18px',
-          boxShadow: '0 16px 32px rgba(0, 0, 0, 0.08)',
-        }}>
+          background: 'transparent',
+        }} className="site-header">
           {/* Wordmark */}
           <div
+            className="header-wordmark"
             style={{ cursor: 'pointer', flexShrink: 0, display: 'flex', flexDirection: 'column', gap: '0.15rem' }}
             onClick={() => handleTabClick('about')}
           >
@@ -114,7 +113,19 @@ export default function App() {
           </div>
 
           {/* Navigation */}
-          <nav style={{
+          <button
+            type="button"
+            className="mobile-menu-button"
+            aria-label="Toggle navigation menu"
+            aria-expanded={mobileMenuOpen}
+            onClick={() => setMobileMenuOpen(open => !open)}
+          >
+            <span />
+            <span />
+            <span />
+          </button>
+
+          <nav className={`site-nav${mobileMenuOpen ? ' open' : ''}`} style={{
             display: 'flex',
             gap: '2.8rem',
             alignItems: 'baseline',
@@ -131,6 +142,9 @@ export default function App() {
           </nav>
         </header>
 
+        {/* Hero Section */}
+        {activeTab === 'about' && <Hero />}
+
         {/* Page content */}
         <main>
           {renderSection()}
@@ -146,12 +160,7 @@ export default function App() {
           justifyContent: 'space-between',
           alignItems: 'center',
           gap: '1.5rem',
-          background: 'rgba(255, 255, 255, 0.7)',
-          backdropFilter: 'blur(14px)',
-          WebkitBackdropFilter: 'blur(14px)',
-          border: '1px solid rgba(255, 255, 255, 0.62)',
-          borderRadius: '18px',
-          boxShadow: '0 16px 32px rgba(0, 0, 0, 0.08)',
+          background: 'transparent',
         }}>
           <p style={{
             fontFamily: '"Computer Modern Serif", serif',
