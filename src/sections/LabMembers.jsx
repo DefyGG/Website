@@ -90,6 +90,8 @@ const label = (text) => (
 
 const divider = <div style={{ borderTop: '1px solid #e8e8e8', margin: '2.5rem 0' }} />;
 
+const sortByName = (entries) => [...entries].sort((left, right) => left.name.localeCompare(right.name));
+
 // ── Sub-components ─────────────────────────────────────────────────────────────
 function MemberCard({ m, current = false }) {
   return (
@@ -208,6 +210,12 @@ function AlumnusRow({ a, index }) {
 
 // ── Main export ────────────────────────────────────────────────────────────────
 export default function LabMembers() {
+  const masters = sortByName(currentMembers.filter(member => member.level === "Master's"));
+  const phdAndPostdoc = sortByName(currentMembers.filter(member =>
+    member.level === 'Ph.D.' || member.level === 'Postdoctoral Fellow'
+  ));
+  const undergraduates = sortByName(currentMembers.filter(member => member.level === 'Undergraduate'));
+
   return (
     <section className="section-enter content-panel" style={{ maxWidth: 900, margin: '0 auto', paddingTop: '4rem', paddingBottom: '6rem' }}>
 
@@ -235,13 +243,29 @@ export default function LabMembers() {
 
       {/* ── Current Members ── */}
       <div style={{ marginBottom: '3rem' }}>
-        {label('Current Members')}
+        {label('Ph.D. / Postdoc')}
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))', gap: '1rem' }}>
-          {currentMembers.map(m => <MemberCard key={m.name} m={m} current />)}
+          {phdAndPostdoc.map(m => <MemberCard key={m.name} m={m} current />)}
         </div>
       </div>
 
       {divider}
+
+      <div style={{ marginBottom: '3rem' }}>
+        {label('Master\'s')}
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))', gap: '1rem' }}>
+          {masters.map(m => <MemberCard key={m.name} m={m} current />)}
+        </div>
+      </div>
+
+      {divider}
+
+      <div style={{ marginBottom: '3rem' }}>
+        {label('Undergraduate')}
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))', gap: '1rem' }}>
+          {undergraduates.map(m => <MemberCard key={m.name} m={m} current />)}
+        </div>
+      </div>
 
       {/* ── Former Postdocs ── */}
       <div style={{ marginBottom: '3rem' }}>
